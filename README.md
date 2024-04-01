@@ -3,7 +3,7 @@
 This code develops an application to send automated emails when you add/remove a track from your Spotify playlist. You will have to enter the email IDs of the followers you want to keep updated through this notification system. Twilio SendGrid is utilised to handle email delivery.
 
 ## Pre-requisites
-Twilio SendGrid account 
+Twilio SendGrid account \
 Spotify Developer Account
 Python 3.6 or newer
 Ngrok
