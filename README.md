@@ -6,7 +6,7 @@ This code develops an application to send automated emails when you add/remove a
 Twilio SendGrid account \
 Spotify Developer Account\
 Python 3.6 or newer\
-Ngrok\
+Ngrok
 
 Install the python packages from the requirements.txt file using:
 ```
