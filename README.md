@@ -4,9 +4,9 @@ This code develops an application to send automated emails when you add/remove a
 
 ## Pre-requisites
 Twilio SendGrid account \
-Spotify Developer Account
-Python 3.6 or newer
-Ngrok
+Spotify Developer Account\
+Python 3.6 or newer\
+Ngrok\
 
 Install the python packages from the requirements.txt file using:
 ```
