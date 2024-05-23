@@ -43,7 +43,7 @@ def add_track_to_playlist(playlist_id:str, track_id:str, followers: str):
         playlist_name = response.json()['name']
         
         # Send confirmation email
-        send_confirmation_email(f"Track {track_name} added to the playlist {playlist_name}.", followers)
+        send_email_notifications(f"Track {track_name} added to the playlist {playlist_name}.", followers)
         
         # Return success message
         return {"message": "Track added successfully."}
@@ -80,7 +80,7 @@ def remove_track_from_playlist(playlist_id:str, track_id:str, followers:str):
         playlist_name = response.json()['name']
         
         # Send confirmation email
-        send_confirmation_email(f"Track {track_name} added to the playlist {playlist_name}.", followers)
+        send_email_notifications(f"Track {track_name} added to the playlist {playlist_name}.", followers)
         
         # Return success message
         return {"message": "Track added successfully."}
@@ -92,7 +92,7 @@ def remove_track_from_playlist(playlist_id:str, track_id:str, followers:str):
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SENDGRID_SEND_EMAIL_URL = "https://api.sendgrid.com/v3/mail/send"
 
-def send_confirmation_email(message, followers):
+def send_email_notifications(message, followers):
     # Extract email IDs by splitting at spaces
     followers = followers.split(" ")
 
