@@ -10,10 +10,6 @@ load_dotenv()
 # Create a FastAPI application instance
 app = FastAPI()
 
-# Spotify settings
-SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")  # Get Spotify client ID from environment variables
-SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")  # Get Spotify client secret from environment variables
-
 # Endpoint to add a track to a playlist
 @app.post("/add_track/")
 def add_track_to_playlist(playlist_id:str, track_id:str, followers: str):
@@ -33,7 +29,7 @@ def add_track_to_playlist(playlist_id:str, track_id:str, followers: str):
     response = requests.post(f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks", headers=headers, json={"uris": ["spotify:track:" + track_id]})
     
     # If track added successfully, send confirmation email to followers
-    if response.status_code == 201:
+    if response.status_code == 200:
         # Get track name from Spotify API response
         response = requests.get(f'https://api.spotify.com/v1/tracks/{track_id}', headers=headers)
         track_name = response.json()['name']
