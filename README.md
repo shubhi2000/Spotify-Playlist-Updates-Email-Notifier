@@ -13,4 +13,4 @@ Install the python packages from the requirements.txt file using:
 pip install -r requirements.txt
 ```
 
-To run the code, you will have to configure the .env file with your credentials and redirect URI. Also, you'll need to update your email ID in line 112 of email_notifier.py.
+To run the code, you will have to configure the .env file with your credentials and redirect URI. Also, you'll need to update your email ID in line 108 of email_notifier.py.
